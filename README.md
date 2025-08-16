@@ -2,7 +2,26 @@
 
 An MCP server implementation that integrates the Sonar API to provide Claude with unparalleled real-time, web-wide research.
 
-Please refer to the official [DeepWiki page](https://deepwiki.com/ppl-ai/modelcontextprotocol) for assistance with implementation. 
+Please refer to the official [DeepWiki page](https://deepwiki.com/ppl-ai/modelcontextprotocol) for assistance with implementation.
+
+## Nix Flake
+
+```sh
+nix run github:serpent213/modelcontextprotocol
+```
+
+```json
+  "mcpServers": {
+    "perplexity": {
+      "command": "nix",
+      "args": [
+        "run",
+        "github:serpent213/modelcontextprotocol",
+        "--"
+      ]
+    }
+  }
+```
 
 # High-level System Architecture
 
@@ -29,7 +48,7 @@ Please refer to the official [DeepWiki page](https://deepwiki.com/ppl-ai/modelco
 
 ## Configuration
 
-### Step 1: 
+### Step 1:
 
 Clone this repository:
 
@@ -51,7 +70,7 @@ cd modelcontextprotocol/perplexity-ask && npm install
 
 ### Step 3: Configure Claude Desktop
 
-1. Download Claude desktop [here](https://claude.ai/download). 
+1. Download Claude desktop [here](https://claude.ai/download).
 
 2. Add this to your `claude_desktop_config.json`:
 
@@ -119,20 +138,20 @@ After clicking on the hammer icon, you should see the tools that come with the F
 
 ![Available Integration](perplexity-ask/assets/available_tools.png)
 
-If you see both of these this means that the integration is active. Congratulations! This means Claude can now ask Perplexity. You can then simply use it as you would use the Perplexity web app.  
+If you see both of these this means that the integration is active. Congratulations! This means Claude can now ask Perplexity. You can then simply use it as you would use the Perplexity web app.
 
 ### Step 6: Advanced parameters
 
 Currently, the search parameters used are the default ones. You can modify any search parameter in the API call directly in the `index.ts` script. For this, please refer to the official [API documentation](https://docs.perplexity.ai/api-reference/chat-completions).
 
-### Troubleshooting 
+### Troubleshooting
 
-The Claude documentation provides an excellent [troubleshooting guide](https://modelcontextprotocol.io/docs/tools/debugging) you can refer to. However, you can still reach out to us at api@perplexity.ai for any additional support or [file a bug](https://github.com/ppl-ai/api-discussion/issues). 
+The Claude documentation provides an excellent [troubleshooting guide](https://modelcontextprotocol.io/docs/tools/debugging) you can refer to. However, you can still reach out to us at api@perplexity.ai for any additional support or [file a bug](https://github.com/ppl-ai/api-discussion/issues).
 
 
 # Cursor integration
 
-You can also use our MCP with Cursor (or any other app that supports this). To use Sonar with Cursor, you can follow the following steps. 
+You can also use our MCP with Cursor (or any other app that supports this). To use Sonar with Cursor, you can follow the following steps.
 
 ### Step 1: Navigate to your Cursor settings:
 
@@ -145,9 +164,9 @@ And click on `Add new global MCP server`
 ![Add Server](perplexity-ask/assets/cursor-mcp-directory.png)
 
 
-### Step 3: Insert the MCP Server Configuration from above 
+### Step 3: Insert the MCP Server Configuration from above
 
-This is the same configuration you would use for any other application that supports MCP. 
+This is the same configuration you would use for any other application that supports MCP.
 
 You should then see the application being part of your available tools like this:
 
@@ -157,4 +176,3 @@ You should then see the application being part of your available tools like this
 ## License
 
 This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.
-

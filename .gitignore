@@ -50,3 +50,6 @@ Desktop.ini
 *.tsv
 *.jsonl
 :
+
+# Nix
+/result
